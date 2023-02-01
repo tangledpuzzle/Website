@@ -1,0 +1,17 @@
+{
+  "python": ["python", "pandas", "numpy", "matplotlib", "seaborn", "scrapy", "beautifulsoup", "machine learning", " ml", "ml,", 
+  			"artificial intelligence", " ai", "ai,", "deep learning", " dl", "dl,", "scikit", "tensorflow", "pytorch", "keras"],
+  "r": [" r ", " r,", "ggplot", "dplyr", "esquisse", "shiny"],
+  "sql": ["sql", "mysql", "postgresql", "microsoft sql", "query", "ssis", "oracle", "etl"],
+  "nosql": ["mongodb", "apache", "neo4j", "cassandar", "elasticsearch", "couchdb", "orientdb"],
+  "excel": ["ms-excel", "excel", "microsoft excel", "pivot", "power query"],
+  "powerbi": ["powerbi", "power bi", "business intelligence tool"],
+  "tableau": ["tableau"],
+  "vba": ["vba", "macro"],
+  "git": ["git", "github", "git-hub"],
+  "sas": [" sas"],
+  "matlab": ["matlab"],
+  "bachelor": ["bachelor", "ug", "b.e", "b.tech", "b.sc", "b.a", "bba", "bca", "b.com", "under graduate"],
+  "master": ["master", "pg", "m.e", "m.tech", "m.sc", "m.a", "mba", "mca", "m.com", "post graduate"],
+  "phd": ["phd", "doctorate"]
+}

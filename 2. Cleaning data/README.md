@@ -4,4 +4,4 @@ Make sure to save the [data analyst](https://github.com/Poova53/Analysis-of-data
 # Libraries need to install
     * Pandas
     * Numpy
-    * Matplotlib (required to check the outier existance)
+    * Matplotlib (required to check the outliers existance)

@@ -1,33 +1,100 @@
-# Analysis of data scientist and analyst job in India #
+# CosmWasm Starter Pack
 
-  In this project, job data for data scientists and data analysts was scraped from the Naukri job portal in India using Python. The data was then cleaned, processed, and analysed using Python data management tools like pandas and numpy, and then displayed using PowerBI. The results of this investigation demonstrated that there is a significant need for data scientists and analysts in India, with the IT and financial sectors having the largest need, particularly in places like Mumbai, Bengaluru, and Delhi. With regard to wage ranges and necessary abilities, the analysis and visualisation offered insights into the job market for these roles.
-  
-  The steps I have done in this projects are:
-   * **Collecting Data**
-   * **Data Wrangling**
-   * **Visualaizing data**
-    
-    
-### Collecting Data
-  I gathered the data from Naukri job portals. With a large selection of job postings across numerous industries, Naukri is a well-known job platform in India. To understand the requirements and trends of the Indian job market, I am gathering data scientist and data analyst job data from Naukri for this study. In order to automatically extract information from websites, I utilized web scraping techniques. 
-  
-  Python Selenium and BeautifulSoup were used to perform the web scraping. You may view my code, which I saved as **[data_scraping.py](https://github.com/Poova53/Analysis-of-data-scientist-and-analyst-job-in-India/blob/d7f3206b73af38bfc99419ecf163ad53167db6b9/1.%20Scraping%20data/data_scraping.py)**. When running this code, it requires two inputs: the job title to search for plus the total amount of pages to scrape. I provided this code to allow users to scrape any specified job title out from required amount of pages on the naukri website. I scraped [data analyst](https://github.com/Poova53/Analysis-of-data-scientist-and-analyst-job-in-India/blob/d7f3206b73af38bfc99419ecf163ad53167db6b9/1.%20Scraping%20data/data%20analyst.csv) and [data scientist](https://github.com/Poova53/Analysis-of-data-scientist-and-analyst-job-in-India/blob/d7f3206b73af38bfc99419ecf163ad53167db6b9/1.%20Scraping%20data/data%20scientist.csv) jobs for my project. I also used a [json](https://github.com/Poova53/Analysis-of-data-scientist-and-analyst-job-in-India/blob/d7f3206b73af38bfc99419ecf163ad53167db6b9/1.%20Scraping%20data/helper.json) file. It contains some keywords that the code uses to look for information about education and skills..
-  
-  
-### Data Wrangling
-  Data wrangling and cleaning are crucial steps in the data analysis process to guarantee that the data being analysed is accurate, consistent, and error-free. This process involves tasks like identifying and removing duplicates, adding missing values, manipulating data and data types. Considering the fact that certain employment involve over many elements, I prefer to segregate the data by degree, income and experience, geography, and skills for this research. I used the Python Pandas library to process this phase.
-  
-  Pandas is a powerful library for data cleaning and manipulation in Python. Its intuitive interface and wide range of functions for data cleaning, makes it an essential tool for any data analyst or scientist. I loaded the CSV files into pandas dataframes, cleaned and then combined them. Then I seperated my data as per my requirement needed for analysis. [click here](https://github.com/Poova53/Analysis-of-data-scientist-and-analyst-job-in-India/blob/d7f3206b73af38bfc99419ecf163ad53167db6b9/2.%20Cleaning%20data/data_cleaning.py) to see the python code. The transformed datas were saved into the sheets of the [fina data](https://github.com/Poova53/Analysis-of-data-scientist-and-analyst-job-in-India/blob/d7f3206b73af38bfc99419ecf163ad53167db6b9/2.%20Cleaning%20data/final_data/final_data.xlsx) excel file.
-  
-  
-### Visualaizing data
-   The efficient sharing of thoughts and conclusions is made possible by visualization techniques. Microsoft's **Power BI** is a tool for data visualisation and business intelligence that offers a variety of tools for building interactive and interesting visualisations. Data exploration and discovery tools are also available in Power BI. This features drill-through capabilities, interactive dashboards, and DAX support for creating different calculations measures.
-    
-   I imported the final data into powerbi after transforming the datas using power query. Calculated some measures using DAX. Visualized graphs for average salary by experience and proportion of skills, pie chart for level of education required, Cards to find out the preference of work from home or work from office jobs. For svisualaization look at my [visualization file](https://github.com/Poova53/Analysis-of-data-scientist-and-analyst-job-in-India/blob/d7f3206b73af38bfc99419ecf163ad53167db6b9/3.%20Visualizing%20data/analysis%20of%20data%20analyst%20and%20data%20scientist%20in%20India.pbix).
-    
-    
-## Result ##
-  * The most commonly requested skill across all industries, according to the skills graph visualization, is Python, which is followed by SQL, Excel, etc. 
-  * With experience, the average wage rises dramatically. 
-  * The majority of employers preferred applicants with bachelor's and master's degrees. 
-  * Nearly 96% of businesses chose non-remote workers.
+This is a template to build smart contracts in Rust to run inside a
+[Cosmos SDK](https://github.com/cosmos/cosmos-sdk) module on all chains that enable it.
+To understand the framework better, please read the overview in the
+[cosmwasm repo](https://github.com/CosmWasm/cosmwasm/blob/master/README.md),
+and dig into the [cosmwasm docs](https://www.cosmwasm.com).
+This assumes you understand the theory and just want to get coding.
+
+## Creating a new repo from template
+
+Assuming you have a recent version of rust and cargo (v1.58.1+) installed
+(via [rustup](https://rustup.rs/)),
+then the following should get you a new repo to start a contract:
+
+Install [cargo-generate](https://github.com/ashleygwilliams/cargo-generate) and cargo-run-script.
+Unless you did that before, run this line now:
+
+```sh
+cargo install cargo-generate --features vendored-openssl
+cargo install cargo-run-script
+```
+
+Now, use it to create your new contract.
+Go to the folder in which you want to place it and run:
+
+
+**Latest: 1.0.0**
+
+```sh
+cargo generate --git https://github.com/CosmWasm/cw-template.git --name PROJECT_NAME
+````
+
+For cloning minimal code repo:
+
+```sh
+cargo generate --git https://github.com/CosmWasm/cw-template.git --branch 1.0-minimal --name PROJECT_NAME
+```
+
+**Older Version**
+
+Pass version as branch flag:
+
+```sh
+cargo generate --git https://github.com/CosmWasm/cw-template.git --branch <version> --name PROJECT_NAME
+````
+
+Example:
+
+```sh
+cargo generate --git https://github.com/CosmWasm/cw-template.git --branch 0.16 --name PROJECT_NAME
+```
+
+You will now have a new folder called `PROJECT_NAME` (I hope you changed that to something else)
+containing a simple working contract and build system that you can customize.
+
+## Create a Repo
+
+After generating, you have a initialized local git repo, but no commits, and no remote.
+Go to a server (eg. github) and create a new upstream repo (called `YOUR-GIT-URL` below).
+Then run the following:
+
+```sh
+# this is needed to create a valid Cargo.lock file (see below)
+cargo check
+git branch -M main
+git add .
+git commit -m 'Initial Commit'
+git remote add origin YOUR-GIT-URL
+git push -u origin main
+```
+
+## CI Support
+
+We have template configurations for both [GitHub Actions](.github/workflows/Basic.yml)
+and [Circle CI](.circleci/config.yml) in the generated project, so you can
+get up and running with CI right away.
+
+One note is that the CI runs all `cargo` commands
+with `--locked` to ensure it uses the exact same versions as you have locally. This also means
+you must have an up-to-date `Cargo.lock` file, which is not auto-generated.
+The first time you set up the project (or after adding any dep), you should ensure the
+`Cargo.lock` file is updated, so the CI will test properly. This can be done simply by
+running `cargo check` or `cargo unit-test`.
+
+## Using your project
+
+Once you have your custom repo, you should check out [Developing](./Developing.md) to explain
+more on how to run tests and develop code. Or go through the
+[online tutorial](https://docs.cosmwasm.com/) to get a better feel
+of how to develop.
+
+[Publishing](./Publishing.md) contains useful information on how to publish your contract
+to the world, once you are ready to deploy it on a running blockchain. And
+[Importing](./Importing.md) contains information about pulling in other contracts or crates
+that have been published.
+
+Please replace this README file with information about your specific project. You can keep
+the `Developing.md` and `Publishing.md` files as useful referenced, but please set some
+proper description in the README.

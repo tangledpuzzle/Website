@@ -1,0 +1,347 @@
+:root {
+
+    /**
+     * COLORS
+     */
+
+    /* background colors */
+    --bg-white: hsla(0, 0%, 100%, 1);
+    --bg-light-gray: hsla(240, 1%, 83%, 1);
+    --bg-jet: hsla(0, 0%, 18%, 1);
+    --bg-eerie-black: hsla(0, 0%, 13%, 1);
+    --bg-rich-black-fogra-29: hsla(229, 23%, 9%, 1);
+    --bg-smoky-black: hsla(0, 0%, 6%, 1);
+    --bg-black: hsla(0, 0%, 0%, 1);
+
+    /* gradient colors */
+    --gradient-1: linear-gradient(to top, var(--bg-black) 0%, transparent 40%);
+    --gradient-2: radial-gradient(circle at 75% 100%, hsla(79, 100%, 70%, 0.3) 0%, transparent 100%);
+
+    /* text colors */
+    --text-white: hsla(0, 0%, 100%, 1);
+    --text-light-gray: hsla(240, 1%, 83%, 1);
+    --text-rich-black-fogra-29: hsla(216, 42%, 12%, 1);
+    --text-smoky-black: hsla(0, 0%, 6%, 1);
+    --text-black: hsla(0, 0%, 0%, 1);
+
+    /* border colors */
+    --border-white: hsla(0, 0%, 100%, 1);
+    --border-light-gray: hsla(240, 1%, 83%, 1);
+    --border-gainsboro: hsla(220, 13%, 91%, 1);
+    --border-eerie-black: rgb(158, 182, 224, 1);
+    --border-smoky-black: hsla(0, 0%, 6%, 1);
+
+    /**
+     * TYPOGRAPHY
+     */
+
+    /* font family */
+    --fontFamily-recoleta: 'Recoleta';
+    --fontFamily-roboto: 'Roboto', sans-serif;
+
+    /* font size */
+    --fontSize-1: 4.6rem;
+    --fontSize-2: 4.5rem;
+    --fontSize-3: 4rem;
+    --fontSize-4: 3rem;
+    --fontSize-5: 2.4rem;
+    --fontSize-6: 1.8rem;
+    --fontSize-7: 2rem;
+    --fontSize-8: 1.6rem;
+    --fontSize-9: 1.5rem;
+    --fontSize-10: 1.4rem;
+
+    /* font weight */
+    --weight-regular: 400;
+    --weight-medium: 500;
+
+    /**
+     * SPACING
+     */
+
+    --section-spacing: 70px;
+
+    /**
+     * BORDER RADIUS
+     */
+
+    --radius-pill: 500px;
+    --radius-circle: 50%;
+
+    /**
+     * TRANSITION
+     */
+
+    --transition-1: 0.25s ease;
+    --transition-2: 0.5s ease;
+    --transition-3: 1000ms cubic-bezier(0.03, 0.98, 0.52, 0.99) 0s;
+    --cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28);
+    --cubic-out: cubic-bezier(0.05, 0.83, 0.52, 0.97);
+
+}
+
+
+
+
+
+/*-----------------------------------*\
+    #RESET
+  \*-----------------------------------*/
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a,
+img,
+span,
+input,
+button,
+textarea,
+ion-icon {
+    display: block;
+}
+
+
+img {
+    height: auto;
+}
+
+ion-icon {
+    pointer-events: none;
+}
+
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    border-inline-start: 1px solid var(--border-eerie-black);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--bg-white);
+}
+
+
+
+
+
+/*-----------------------------------*\
+    #REUSED STYLE
+  \*-----------------------------------*/
+
+.text-center {
+    text-align: center;
+}
+
+.has-before,
+.has-after {
+    position: relative;
+    z-index: 1;
+}
+
+.has-before::before,
+.has-after::after {
+    content: "";
+    position: absolute;
+}
+
+.img-holder {
+    aspect-ratio: var(--width) / var(--height);
+    overflow: hidden;
+    background-color: var(--bg-jet);
+}
+
+.img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+[data-tilt] {
+    transition: var(--transition-3);
+}
+
+.title {
+    color: var(--text-white);
+    font-family: var(--fontFamily-recoleta);
+    font-weight: var(--weight-regular);
+}
+
+/*-----------------------------------*\
+    #HERO
+  \*-----------------------------------*/
+
+.hero {
+    position: relative;
+    padding-block-start: 120px;
+}
+
+.hero .container {
+    display: grid;
+    gap: 50px;
+}
+
+.banner-outline {
+    position: relative;
+    max-width: max-content;
+    margin-inline: auto;
+}
+
+.banner-outline::after {
+    top: 20px;
+    right: -10px;
+    width: 100%;
+    height: 100%;
+    outline: 1px solid var(--border-eerie-black);
+    border-radius: var(--radius-pill);
+}
+
+.hero-banner {
+    position: relative;
+    border-radius: var(--radius-pill);
+}
+
+.hero-banner::after {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: var(--gradient-1);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.banner-outline .span {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--fontSize-4);
+    min-width: max-content;
+    z-index: 1;
+}
+
+.hero .btn {
+    margin-block: 20px;
+    margin-inline: auto;
+}
+
+.hero .shape {
+    position: absolute;
+    max-width: 100%;
+    z-index: -1;
+}
+
+.hero .shape-1 {
+    top: -60px;
+    left: 120px;
+}
+
+.hero .shape-2 {
+    top: 180px;
+    left: 0;
+}
+
+
+
+
+
+/*-----------------------------------*\
+    #MEDIA QUERIES
+  \*-----------------------------------*/
+
+@media (min-width: 575px) {
+
+    /**
+     * HERO
+     */
+
+    .hero .banner-outline {
+        max-width: 410px;
+    }
+
+    .hero .banner-outline::after {
+        right: -15px;
+    }
+
+}
+
+
+
+
+
+/**
+   * responsive for large than 768px screen
+   */
+
+@media (min-width: 768px) {
+
+    /**
+     * HERO
+     */
+
+    .hero {
+        text-align: left;
+    }
+
+    .hero .container {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .banner-outline {
+        order: 1;
+    }
+
+    .hero .btn {
+        margin-inline: 0;
+    }
+
+}
+
+
+
+
+
+/**
+   * responsive for large than 992px screen
+   */
+
+@media (min-width: 992px) {
+
+    /**
+     * HERO
+     */
+
+    .hero .container {
+        grid-template-columns: 1fr 0.7fr;
+    }
+
+    .hero .banner-outline {
+        max-width: 366px;
+    }
+
+    .hero .wrapper {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .hero .btn {
+        flex-shrink: 0;
+    }
+
+
+}
